@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL 縮短器</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>URL 縮短器</h1>
+        <div class="url-form">
+            <input type="url" id="longUrl" placeholder="請輸入網址" required>
+            <button id="submitBtn">縮短</button>
+        </div>
+        <div id="result" class="result hidden">
+            <p>您的短網址：</p>
+            <div class="short-url-container">
+                <input type="text" id="shortUrl" readonly>
+                <button id="copyBtn">複製</button>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
