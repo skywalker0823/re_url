@@ -8,6 +8,12 @@ if [ -z "$domain" ]; then
     exit 1
 fi
 
+# 生成 .env 檔案
+echo "正在生成 .env 檔案..."
+cat > .env << EOF
+DOMAIN_NAME=$domain
+EOF
+
 # 生成 nginx.conf
 echo "正在生成 nginx.conf..."
 cat > ./nginx/nginx.conf << EOF

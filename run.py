@@ -20,9 +20,8 @@ def index():
         
         short_id = generate_short_id()
         r.set(short_id, long_url)
-        domain = os.getenv('DOMAIN_NAME', 'localhost')
-        protocol = 'https' if os.getenv('USE_HTTPS', 'true').lower() == 'true' else 'http'
-        return f'短網址: {protocol}://{domain}/{short_id}'
+        domain = os.getenv('DOMAIN_NAME', 'localhost:5000')
+        return f'短網址: http://{domain}/{short_id}'
     
     return '''
         <form method="POST">
